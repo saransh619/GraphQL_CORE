@@ -1,0 +1,51 @@
+-----GetAllUsersData-----
+{
+	users{
+    name
+    email,
+    id
+    message
+  }
+}
+
+------Get Specific Users Data-------
+{
+	user(id:"2"){
+    name,
+    email
+    message
+    id
+  }
+}
+
+-------Add Users-------
+mutation{
+addUser(
+	name:"rock"
+  message:"Rock's Eye"
+  email:"rock25@gmail.com"
+ 
+) {
+  id
+} 
+}
+
+-------Update-------
+mutation{
+  updateUser(
+    id: 2
+    name: "Saransh Pachhai",
+    message: "I am Saransh"
+    email: "saranshpachhai@gmail.com"
+  ) {
+    id
+  }
+}
+
+
+------delete user-------
+mutation{
+  deleteUser(id:"4") {
+    id
+  }
+}

@@ -1,6 +1,6 @@
 const express = require("express");
 let userList = require("./mock-data.json");
-const {graphqlHTTP} = require("express-graphql");
+const { graphqlHTTP } = require("express-graphql");
 const {
     GraphQLID,
     GraphQLObjectType,
@@ -48,8 +48,9 @@ const query = new GraphQLObjectType({
                 return userList.find((user) => user.id === parseInt(args.id))
             }
         }
-    
-}});
+
+    }
+});
 //mutation
 const mutation = new GraphQLObjectType({
     name: "mutations",
@@ -63,8 +64,8 @@ const mutation = new GraphQLObjectType({
                 },
                 email: {
                     type: new GraphQLNonNull(GraphQLString)
-                }, 
-                message:{
+                },
+                message: {
                     type: new GraphQLNonNull(GraphQLString)
                 }
             },
@@ -114,7 +115,7 @@ const mutation = new GraphQLObjectType({
                 email: {
                     type: GraphQLString
                 },
-                message:{
+                message: {
                     type: GraphQLString
                 }
             },
